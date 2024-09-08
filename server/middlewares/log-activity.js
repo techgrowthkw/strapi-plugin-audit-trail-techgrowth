@@ -36,6 +36,9 @@ const getActionType = (method, path) => {
         if (method === "PUT" && path.includes("content-manager")) {
             return "Update Content";
         }
+        if (method === "DELETE" && path.includes("content-manager")) {
+            return "Delete Content";
+        }
         if (method === "PUT" && path.includes("users/me")) {
             return "Profile Update";
         }
@@ -54,9 +57,9 @@ const getActionType = (method, path) => {
         if (method === "POST" && path.includes("users/batch-delete")) {
             return "User Delete";
         }
-        if (method === "POST" && path.includes("renew-token")) {
-            return "Renew Token";
-        }
+        // if (method === "POST" && path.includes("renew-token")) {
+        //     return "Renew Token";
+        // }
     }
     return "Other Activities";
 };
